@@ -1,3 +1,4 @@
+// This is a simple TypeScript example demonstrating variable declarations, string interpolation, and array operations.
 const num: number = 5;
 const str: string = "Hello, TypeScript!";
 
