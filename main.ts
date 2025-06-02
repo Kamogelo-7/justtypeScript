@@ -25,7 +25,7 @@ clearInterval(iterationProcessor);
 // This code iterates through letters and numbers, skipping a specific condition.
 for (const letter of letters) {
   for (const num of nums) {
-    if (letter === "c" && num === 3) {
+    if (`${letter}${num}` === "c3") {
       console.log(`${letter.toUpperCase()}${num} - Skipped`);
     } else {
       console.log(`${letter.toUpperCase()}${num} - Processed`);
