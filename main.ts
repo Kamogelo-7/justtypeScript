@@ -40,3 +40,4 @@ for (const letter of letters) {
   }
   console.log(`${letter.toUpperCase()}${num} - Processed`);
 }
+
