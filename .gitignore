@@ -1,5 +1,7 @@
 tsconfig.json
 main.js
+index.html
+advanceTsConcepts/advance.js
 
 __pycache__/
 # Ignore node_modules directory
