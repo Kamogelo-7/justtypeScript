@@ -1,2 +1,7 @@
 tsconfig.json
 main.js
+
+__pycache__/
+# Ignore node_modules directory
+node_modules/
+# Ignore log files
