@@ -4,10 +4,10 @@ const str: string = "Hello, TypeScript!";
 
 console.log(`Number: ${num} and String: ${str}`);
 
-let user: string[] = ["John Doe", "Jane Smith", "John Doe"];
+let user: string[] = ["John Doe", "Jane Smith", "Johnny smith"];
 
 if (user.includes("John Doe")) {
-  console.log("User John Doe exists in the array.");
+  console.log(`User ${user[0]} exists in the array.`);
 } else {
   user.push("Alice Johnson");
   console.log("Updated user array:", user);
@@ -40,4 +40,3 @@ for (const letter of letters) {
   }
   console.log(`${letter.toUpperCase()}${num} - Processed`);
 }
-
