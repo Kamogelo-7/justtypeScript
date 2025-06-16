@@ -109,7 +109,13 @@ const monsterClassType = (name: string, type: string) => {
 
 const swimmingMonster = (name: string, type: string) => {
   return {
-    swim: () => console.log(`${name} is swimming ${type}`),
+    swim: () => console.log(`${name} is swimming ${type} monster`),
+  };
+};
+
+const fireMonsster = (name: string, type: string) => {
+  return {
+    fire: () => console.log(`${name} is a ${type} monster`),
   };
 };
 
@@ -117,10 +123,12 @@ const uniqueMonsterCreator = (name: string, type: string) => {
   return {
     ...monsterClassType(name, type),
     ...swimmingMonster(name, type),
+    ...fireMonsster(name, type),
   };
 };
 
 const unique = uniqueMonsterCreator("jaibo", "ice");
+unique.fire();
 unique.monsterType();
 unique.run();
 unique.swim();
