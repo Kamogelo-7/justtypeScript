@@ -1,4 +1,5 @@
 import { logger } from "./logger";
+import { Query } from "./logger";
 interface Topic {
   title: string;
   description: string;
@@ -13,11 +14,6 @@ const info: SubTopic = {
   title: "Into the zone",
   description:
     "The movie was quite amazing the plot, writing, music, actors legite everything was on point well produced film of the decade 10/10 would highly recommand",
-};
-
-type Topic1 = {
-  title: string;
-  description: string;
 };
 
 type SubTopic1 = Topic & {
@@ -135,6 +131,40 @@ unique.swim();
 
 //? ( O/C ) Open/Closed Principle in TypeScript.
 
+//import { Query } from "./logger";
+class RangeQuestion {
+  description: Query;
+  constructor(description: Query) {
+    this.description = description;
+  }
+  printQuestionChoices() {
+    console.log("Minimum:_______");
+    console.log("Maximum:_______");
+  }
+}
+
+const printQuiz = (questions: Query) => {
+  questions.forEach((question) => {
+    console.log(question.description);
+  });
+};
+
+const questions: Query = [
+  {
+    type: true,
+    description: "Justice-BEAM",
+  },
+  {
+    type: "multiplechoice",
+    description: "Justice-BEAM",
+    options: ["CSS", "HTML", "JAVASCRIPT", "PYTHON"],
+  },
+];
+printQuiz(questions);
+
+const quiz = new RangeQuestion(questions);
+quiz.printQuestionChoices();
+
 //? Liskov Substitution Principle in TypeScript.
 
 class FlyingBird {
@@ -163,6 +193,7 @@ class Penguin extends SwimmingBird {
 
 const duck = new Duck();
 duck.fly();
+duck.quack();
 const penguin = new Penguin();
 penguin.swim();
 
