@@ -1,6 +1,6 @@
 CREATE TABLE users(
     id SERIAL PRIMARY KEY NOT NULL,
-    username VARCHAR(30) NOT NULL,
+    username VARCHAR(50) NOT NULL,
     email VARCHAR(100) UNIQUE,
     password VARCHAR(100) NOT NULL
 );
@@ -21,17 +21,17 @@ CREATE TABLE items(
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
-INSERT INTO items(stock, arrival, country, user_id)
-VALUES(10, '2025-05-03', 'South Africa', 1);
+INSERT INTO items(stock, country, user_id)
+VALUES(10, 'South Africa', 1);
 
-CREATE TABLE item_shelf(
+CREATE TABLE shelves(
     id SERIAL PRIMARY KEY,
-    shelf INT NOT NULL,
+    shelf_position INT NOT NULL,
     item_id INT NOT NULL,
     FOREIGN KEY (item_id) REFERENCES items(id) ON DELETE CASCADE
 );
 
-INSERT INTO item_shelf(shelf, item_id)
+INSERT INTO shelves(shelf_position, item_id)
 VALUES(1,1)
 
 app.get("/products",(req,res)=>{
